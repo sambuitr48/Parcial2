@@ -10,7 +10,7 @@ public class MainToyStore {
         ToyStoreInterface repo = new ToyStoreService();
         Scanner s = new Scanner(System.in);
         while (!opt.equals("5")){
-            System.out.println("Menu: \n Digita '1' para ingresar datos del producto \n Digita '2' para consultar las compras anteriores \n Digita '3' para ingresar in producto \n Digita '4' para eliminar un producto \n Digita '5' para salir de la tienda ");
+            System.out.println("Menu: \n Digita '1' para ingresar datos del producto \n Digita '2' para consultar los productos anteriores \n Digita '3' para editar un producto \n Digita '4' para eliminar un producto \n Digita '5' para salir de la tienda ");
             opt = s.next();
             if (opt.equals("1")) {
                 System.out.println("REGISTRA TU COMPRA");
@@ -50,7 +50,7 @@ public class MainToyStore {
                 }
             } else if (opt.equals("4")) {
                 System.out.println("ELIMINAR");
-                System.out.println("Ingresa el numero de factura que desees eliminar");
+                System.out.println("Ingresa el serial de producto que desees eliminar");
                 int facturita = Integer.parseInt(s.next());
                 repo.delete(repo.findById(facturita));
                 repo.findAll().forEach(System.out::println);
